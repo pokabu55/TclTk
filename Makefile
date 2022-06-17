@@ -2,9 +2,9 @@ COMPILER  = g++
 #CFLAGS    = -g -MMD -MP -Wall -Wextra -Winit-self -Wno-missing-field-initializers
 CFLAGS    = -std=c++11 -g -O0 -MMD -MP -Wall -Wextra -Winit-self -Wno-missing-field-initializers #-DWITH_WSL
 ifeq "$(shell getconf LONG_BIT)" "64"
-  LDFLAGS = `pkg-config opencv --cflags --libs` -pthread -ldlib -llapack -lblas
+  LDFLAGS = `pkg-config opencv --cflags --libs` -pthread -ldlib -llapack -lblas -ltcl
 else
-  LDFLAGS = `pkg-config opencv --cflags --libs` -pthread -ldlib -llapack -lblas
+  LDFLAGS = `pkg-config opencv --cflags --libs` -pthread -ldlib -llapack -lblas -ltcl
 endif
 
 LIBS      = 
